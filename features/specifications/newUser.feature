@@ -4,11 +4,9 @@ Funcionalidade: Cadastro de usuario
   Contexto: Cadastro de usuario
     Dado que eu esteja na homepage
     E acesse a sigin page
-    E informe um email valido
-    E clique no botao Create an account
+    E comece um cadastro de usuário
 
   Cenário: Cadastrar usuario com sucesso
-
     Quando eu informar os dados corretos
-    E precionar o botao registrar
+    E concluir o cadastro
     Então minha conta sera criada com sucesso
