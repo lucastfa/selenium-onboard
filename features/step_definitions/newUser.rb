@@ -23,9 +23,12 @@ Quando(/^eu informar os dados corretos$/) do
 end
 
 Quando(/^concluir o cadastro$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @newaccount_page.confirm
 end
 
 Então(/^minha conta sera criada com sucesso$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @account_page = AccountPage.new
+
+  expect(@account_page.current_url).to include "http://automationpractice.com/index.php?controller=my-account"
+  
 end

@@ -11,8 +11,19 @@ class NewAccountPage < SitePrism::Page
   element :newsletter_checkbox, "#newsletter"
   element :special_offers_checkbox, "#optin"
 
-  
-
+  element :adress_first_name_field, "#firstname"
+  element :adress_last_name_field, "#lastname"
+  element :company_field, "#company"
+  element :adress1_field, "#address1"
+  element :adress2_field, "#address2"
+  element :city_field, "#city"
+  element :state_list, "select[name='id_state']"
+  element :postcode_field, "#postcode"
+  element :country_list, "select[name='id_country']"
+  element :additional_information_field, "#other"
+  element :phone_field, "#phone"
+  element :phone_mobile_field, "#phone_mobile"
+  element :adress_alias_field, "#alias"
 
   def fillPersonalInformation()
 
@@ -39,8 +50,38 @@ class NewAccountPage < SitePrism::Page
 
   def fillYourAdress()
 
-  	
+  	adress_first_name = Faker::Name.name
+  	adress_last_name = Faker::Name.name
+  	company = Faker::Company.name
+  	address1 = Faker::Address.street_address
+  	address2 = Faker::Address.secondary_address
+  	city = Faker::Address.city
+  	state = "Alabama"
+  	postcode = assword = Faker::Number.number(5)
+  	country = "United States"
+  	additional_information = Faker::LeagueOfLegends.quote
+  	phone = assword = Faker::Number.number(8)
+  	phone_mobile = Faker::PhoneNumber.cell_phone
+  	adress_alias = Faker::Address.street_address
 
+  	adress_first_name_field.set(adress_first_name)
+  	adress_last_name_field.set(adress_last_name)
+  	company_field.set(company)
+  	adress1_field.set(address1)
+  	adress2_field.set(address2)
+  	city_field.set(city)
+  	state_list.select(state)
+  	postcode_field.set(postcode)
+  	country_list.select(country)
+  	additional_information_field.set(additional_information)
+  	phone_field.set(phone)
+  	phone_mobile_field.set(phone_mobile)
+  	adress_alias_field.set(adress_alias)
+
+  end
+
+  def confirm()
+    click_on 'Register'
   end
 
 end
