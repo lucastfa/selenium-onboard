@@ -2,6 +2,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'site_prism'
+require 'faker'
 
 Capybara.default_driver = :selenium
 

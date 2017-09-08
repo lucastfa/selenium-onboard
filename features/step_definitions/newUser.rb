@@ -17,7 +17,8 @@ Dado(/^comece um cadastro de usuário$/) do
 end
 
 Quando(/^eu informar os dados corretos$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @newaccount_page = NewAccountPage.new
+  @newaccount_page.create_new_account
 end
 
 Quando(/^concluir o cadastro$/) do

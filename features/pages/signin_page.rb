@@ -6,8 +6,7 @@ class SigninPage < SitePrism::Page
   def createAccount
     wait_for_email_field
     email_field.set "lucastadeu@gmail.com"
-
-    create_account_button.click
+    click_on 'Create an account'
   end
 
 end
