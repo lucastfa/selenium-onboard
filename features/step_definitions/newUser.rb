@@ -18,7 +18,8 @@ end
 
 Quando(/^eu informar os dados corretos$/) do
   @newaccount_page = NewAccountPage.new
-  @newaccount_page.create_new_account
+  @newaccount_page.fillPersonalInformation
+  @newaccount_page.fillYourAdress
 end
 
 Quando(/^concluir o cadastro$/) do
