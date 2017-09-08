@@ -25,19 +25,22 @@ class NewAccountPage < SitePrism::Page
   element :phone_mobile_field, "#phone_mobile"
   element :adress_alias_field, "#alias"
 
-  def fillPersonalInformation()
+  element :register_button, "#submitAccount"
 
-    first_name = Faker::Name.name
-    last_name = Faker::Name.name
+  @@first_name = Faker::Name.name
+  @@last_name = Faker::Name.name
+
+  def fillPersonalInformation()
     email = Faker::Internet.email
     password = Faker::Number.number(8)
     day = 31
     month = "January"
     year = 2017
 
+    wait_for_gender_radio_button
     gender_radio_button.click
-    first_name_field.set(first_name)
-    last_name_field.set(last_name)
+    first_name_field.set(@@first_name)
+    last_name_field.set(@@last_name)
     email_field.set(email)
     password_field.set(password)
     day_list.select(day)
@@ -45,13 +48,9 @@ class NewAccountPage < SitePrism::Page
     year_list.select(year)
     newsletter_checkbox.click
     special_offers_checkbox.click
-
-  end 
+  end
 
   def fillYourAdress()
-
-  	adress_first_name = Faker::Name.name
-  	adress_last_name = Faker::Name.name
   	company = Faker::Company.name
   	address1 = Faker::Address.street_address
   	address2 = Faker::Address.secondary_address
@@ -64,8 +63,8 @@ class NewAccountPage < SitePrism::Page
   	phone_mobile = Faker::PhoneNumber.cell_phone
   	adress_alias = Faker::Address.street_address
 
-  	adress_first_name_field.set(adress_first_name)
-  	adress_last_name_field.set(adress_last_name)
+  	adress_first_name_field.set(@@first_name)
+  	adress_last_name_field.set(@@last_name)
   	company_field.set(company)
   	adress1_field.set(address1)
   	adress2_field.set(address2)
@@ -77,11 +76,10 @@ class NewAccountPage < SitePrism::Page
   	phone_field.set(phone)
   	phone_mobile_field.set(phone_mobile)
   	adress_alias_field.set(adress_alias)
-
   end
 
   def confirm()
-    click_on 'Register'
+    register_button.click
   end
 
 end
