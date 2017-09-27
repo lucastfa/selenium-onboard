@@ -58,7 +58,7 @@ class NewAccountPage < SitePrism::Page
   	state = "Alabama"
   	postcode = assword = Faker::Number.number(5)
   	country = "United States"
-  	additional_information = Faker::LeagueOfLegends.quote
+  	additional_information = Faker::Name.name
   	phone = assword = Faker::Number.number(8)
   	phone_mobile = Faker::PhoneNumber.cell_phone
   	adress_alias = Faker::Address.street_address
