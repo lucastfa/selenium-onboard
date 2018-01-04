@@ -1,7 +1,6 @@
 class SigninPage < SitePrism::Page
-
-  element :email_field, "#email_create"
-  element :create_account_button, "#SubmitCreate"
+  element :email_field, '#email_create'
+  element :create_account_button, '#SubmitCreate'
 
   def createAccount
     wait_for_email_field
@@ -9,5 +8,4 @@ class SigninPage < SitePrism::Page
     wait_for_create_account_button
     create_account_button.click
   end
-
 end

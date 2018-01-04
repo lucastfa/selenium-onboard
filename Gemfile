@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem "cucumber"
-gem "rspec", :require => "spec"
-gem "selenium-webdriver"
 gem 'capybara'
-gem 'site_prism'
+gem 'chromedriver-helper'
+gem 'cucumber'
+gem 'faker'
 gem 'pry'
-gem "chromedriver-helper"
-gem "faker"
+gem 'rspec', require: 'spec'
+gem 'selenium-webdriver'
+gem 'site_prism'
