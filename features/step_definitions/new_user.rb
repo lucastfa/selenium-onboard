@@ -6,20 +6,20 @@ Dado(/^que eu esteja na homepage$/) do
 end
 
 Dado(/^acesse a sigin page$/) do
-  @home_page.goToLogin
+  @home_page.go_to_login
 
   @signin_page = SigninPage.new
   expect(@signin_page.title).to include 'Login'
 end
 
 Dado(/^comece um cadastro de usuário$/) do
-  @signin_page.createAccount
+  @signin_page.create_account
 end
 
 Quando(/^eu informar os dados corretos$/) do
   @newaccount_page = NewAccountPage.new
-  @newaccount_page.fillPersonalInformation
-  @newaccount_page.fillYourAdress
+  @newaccount_page.fill_personal_information
+  @newaccount_page.fill_your_address
 end
 
 Quando(/^concluir o cadastro$/) do

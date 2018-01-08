@@ -5,13 +5,8 @@ class HomePage < SitePrism::Page
   element :search_field, '#search_query_top'
   element :search_button, '#searchbox > button'
 
-  def goToLogin
+  def go_to_login
     wait_for_login_link
     login_link.click
-  end
-
-  def fillSearchInformation
-    search_field.set('shirt')
-    search_button.click
   end
 end

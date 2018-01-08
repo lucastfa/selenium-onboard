@@ -29,7 +29,7 @@ class NewAccountPage < SitePrism::Page
   @@first_name = Faker::Name.name
   @@last_name = Faker::Name.name
 
-  def fillPersonalInformation
+  def fill_personal_information
     wait_for_gender_radio_button
     gender_radio_button.click
     first_name_field.set(@@first_name)
@@ -43,7 +43,7 @@ class NewAccountPage < SitePrism::Page
     special_offers_checkbox.click
   end
 
-  def fillYourAdress
+  def fill_your_address
     adress_first_name_field.set(@@first_name)
     adress_last_name_field.set(@@last_name)
     company_field.set(Faker::Company.name)
