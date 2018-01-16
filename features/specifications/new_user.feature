@@ -1,13 +1,9 @@
-# language: pt
-@cadastro
-Funcionalidade: Cadastro de usuario
+@newAccount
+Feature: Create Account Journey
 
-  Cenário: Cadastrar usuario com sucesso
+  Scenario: Create a new account
 
-    Dado que eu esteja na homepage
-    E acesse a sigin page
-    E comece um cadastro de usuário
-    Quando eu informar os dados corretos
-    E concluir o cadastro
-    Então minha conta sera criada com sucesso
-
+    Given that the user is in the home page
+    And want to create a new account
+    When the user input the correct data
+    Then the account should be created with success

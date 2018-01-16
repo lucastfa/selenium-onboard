@@ -1,4 +1,4 @@
-class NewAccountPage < SitePrism::Page
+class CreateAccountPage < SitePrism::Page
   element :gender_radio_button, '#id_gender1'
   element :first_name_field, '#customer_firstname'
   element :last_name_field, '#customer_lastname'

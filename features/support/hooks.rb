@@ -1,7 +1,7 @@
 require_relative 'helper.rb'
 
 Before do |_feature|
- Capybara.default_max_wait_time = 10
+  Capybara.default_max_wait_time = 10
 end
 
 After do |scenario|

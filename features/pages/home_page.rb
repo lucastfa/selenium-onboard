@@ -1,12 +1,7 @@
 class HomePage < SitePrism::Page
   set_url 'http://automationpractice.com'
 
-  element :login_link, '.login'
-  element :search_field, '#search_query_top'
-  element :search_button, '#searchbox > button'
-
-  def go_to_login
-    wait_for_login_link
-    login_link.click
+  def go_to_sign_in
+    click_link 'Sign in'
   end
 end
