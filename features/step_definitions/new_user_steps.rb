@@ -10,7 +10,7 @@ Given(/^that the user is in the home page$/) do
   @home_page.load
 end
 
-Given(/^want to create a new account$/) do
+And(/^want to create a new account$/) do
   @home_page.go_to_sign_in
   @signin_page.create_account
 end
